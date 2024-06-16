@@ -1,3 +1,7 @@
+# Codebase to the Semesterthesis: Multimodal Image Reconstruction from EEG Signals using Latent Diffusion Models
+
+This codebase is published together with the semesterthesis "Semester Thesis: Multimodal Image Reconstruction from EEG Signals using Latent Diffusion Models". The goal of the thesis was to reconstruct image from EEG-data based on stable diffusion and existing EEG decoders. Successful reconstructions could be achieved and can be reproduced following the following setup and running experiments 10 11 followed by 12 and plotting the results in src/analysis_notebooks/results.ipynb
+
 
 # Setup of Repository:
 
