@@ -1,0 +1,12 @@
+model:
+  device: cuda
+  target: src.eeg_encoders.models.lstm_encoder.LSTMEncoder
+  modules:
+    lstm:
+      in_channels: 63
+      out_channels: 63
+      layer_count: 1
+      dropout: 0.0
+    fc:
+      in_features: 63
+      out_features: 768

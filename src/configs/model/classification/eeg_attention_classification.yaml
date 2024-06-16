@@ -1,0 +1,46 @@
+model:
+  device: cuda
+  target: src.eeg_encoders.models.visual_gnn_encoder.VisualGNNEncoder
+  modules:
+    temporal:
+      in_channels: [1, 1, 1]
+      out_channels: [2, 2, 2]
+      kernel_sizes: [9, 9, 9]
+      strides: [1, 1, 1]
+      paddings: [4, 8, 16]
+      dilations: [1, 2, 4]
+      conv_count: 3
+    spatial:
+      time_shape: 250
+      channels: 6
+      num_heads: 6
+      hidden_channels: None
+      layer_count: 1
+    residual:
+      in_channels: [[6, 6], [6, 6], [6, 6]]
+      out_channels: [[6, 6], [6, 6], [6, 6]]
+      kernel_sizes: [[3, 3], [3, 3], [3, 3]]
+      strides: [[1, 1], [1, 1], [1, 1]]
+      dilations: [[1, 1], [1, 1], [1, 1]]
+      paddings: [[1, 1], [1, 1], [1, 1]]
+      pool_sizes: [[2, 1], [2, 1], [2, 1]] # (17,101) -> (9, 51) -> (5, 25) -> (3, 13)
+      input_pool_size: [2, 2, 2]
+      conv_count: 2
+      layer_count: 3
+    fc:
+      in_channels: 6
+      out_channels: 1
+      kernel_size: 2 # (6, 11)
+      stride: 1
+      padding: 0
+      dilation: 1
+      in_features: 180
+      inter_features: None
+      inter_layers: 0
+      out_features: 768
+      up_in_channels: None
+      up_out_channels: None
+      up_kernel_size: None
+      up_stride: None
+      up_padding: None
+      up_layers: 0

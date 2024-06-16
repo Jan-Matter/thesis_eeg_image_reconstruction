@@ -1,0 +1,2 @@
+model:
+    target: src.stablediffusion.modules.encoders.modules.FrozenCLIPEmbedder

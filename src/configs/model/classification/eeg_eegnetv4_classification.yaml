@@ -1,0 +1,16 @@
+model:
+  device: cuda
+  target: src.eeg_encoders.models.visual_eeg_netv4_classifier.VisualEEGNetV4Classifier
+  n_chans: 63
+  n_outputs: 10
+  out_features: 768
+  n_times: 250
+  final_conv_length: auto
+  pool_mode: mean
+  F1: 28
+  D: 2
+  F2: 28
+  kernel_length: 64
+  third_kernel_size: (8, 4)
+  drop_prob: 0.25
+  chs_info: null
