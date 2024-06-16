@@ -1,0 +1,9 @@
+pyenv/*
+db/*
+.vscode/*
+.env
+**/data
+**/output
+**/trained_models
+**/__pycache__
+*.pyc
